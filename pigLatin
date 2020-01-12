@@ -1,1 +1,102 @@
+ing System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PigLatin
+{
+    internal class Program
+    {
+        public static readonly object repos;
+
+        public static object Users { get; private set; }
+        public static int Length { get; private set; }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a word");
+            string word = Console.ReadLine();
+
+            char[] vowels { 'a', 'e', 'i', 'o', 'u'};
+            //find the first letter
+            string firstLetter = word.Substring(0, 1);
+            //find the last letter
+            string lastletter = word.Substring(word.Length - 1);
+            //gets the word minus the first letter
+            string neWord = word.Substring(1, word.Length - 1) + firstLetter;
+
+            if (word.IndexOfAny(vowels) == -1) ;
+            {
+              //no vowels exist in the word
+            }
+
+            {
+                Console.WriteLine(word + "Hello everyone");
+            }
+
+
+            else if (firstLetter.IndexOfAny(vowels) == 0) // First letter  is a vowel
+            {
+                //add the new ending
+                if (lastletter.IndexOfAny(vowels) == 0) // last letter is a vowel
+                {
+                    Console.WriteLine(word + "I would love to go to the baseball game");
+                }
+                else
+                {
+                     Console.WriteLine(word + "Hello everyone");
+
+                    else; // first letter is a consonant
+                    }
+                
+                {
+                    Console.WriteLine('newbird' + "Hello everyone");
+
+                    float f1 = 45e4F;
+                    double d1 = 14E5D;
+                    Console.WriteLine(f1);
+                    Console.WriteLine(d1);
+                 }
+
+
+
+                PigLatin("Astazi e ziua mea.");
+            }
+
+            public static void PigLatin(string text)
+            {
+                char[] lista = { 'A', 'E', 'I', 'O', 'U', 'Y', 'a', 'e', 'i', 'o', 'u', 'y' };
+                string[] lista2 = { "Astazi", "e", "ziua", "mea" };
+                foreach (string word in lista2)
+                {
+                    string newWord;
+                    if (Array.BinarySearch(lista, word[0]) >= 0)
+                    {
+                        newWord = word + "ay";
+                        Console.Write(newWord + " ");
+                    }
+                    else
+                    {
+                        if (word.Length > 1)
+                        {
+                            newWord = word.Substring(1) + word[0] + "ay";
+                            Console.Write(newWord + "yay");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    }
+}
+
+    
+
+        }   
+            
+    }
+}
+
+
 
