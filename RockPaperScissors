@@ -1,1 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace RockPaperScissors
+{
+    class Program
+    {
+       public static void Main(string[] args)
+        {
+            Random random = new Random();
+            int _ComputerGame = random.Next(0, 3);
+
+            Console.WriteLine("Enter 1 for Rock, 2 for Paper, 3 for Scissors");
+            string input = Console.ReadLine();
+            int hand1;
+            int.TryParse(input, out hand1);
+
+            if (hand1 != 0)
+            {
+             CompareHands(_ComputerGame, hand1);
+            }
+             
+
+         }
+
+        public static void CompareHands(int hand1, int computerhand)
+        {
+            if (hand1 == computerhand)
+            {
+                Console.WriteLine("It's a draw");
+                Console.WriteLine("computer chose" + computerhand);
+            }
+
+            if (hand1 > computerhand)
+            {
+                Console.WriteLine("computer chose" + computerhand);
+                Console.WriteLine("user1");
+            }
+            if (hand1 < computerhand)
+            {
+                Console.WriteLine("Rock");
+                Console.WriteLine("computer chose" + computerhand);
+
+            }
+            if(hand1 > computerhand)
+            {
+                Console.WriteLine("paperwon");
+                Console.WriteLine("computer chose" + computerhand);
+            }
+            if (hand1 < computerhand)
+            {
+                Console.WriteLine("scissorswon");
+                Console.WriteLine("computer chose" + computerhand);
+            }
+            else if (hand1 > computerhand)
+            {
+                Console.WriteLine("user2won");
+                Console.WriteLine("Rock");
+                Console.WriteLine("computer chose" + computerhand);
+            }
+            else if (hand1 < computerhand) 
+            {
+                Console.WriteLine("computerwon");
+                Console.WriteLine("Paper");
+                Console.WriteLine("computer chose" + computerhand);
+            }
+            else if (hand1 > computerhand)
+            {
+                Console.WriteLine("tiewon");
+                Console.WriteLine("scissors");
+                Console.WriteLine("computer chose" + computerhand);
+            }
+                
+            }
+        }
+
+        }
