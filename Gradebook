@@ -1,1 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace Gradebook
+{
+    class Program
+    {
+        static string userChoice;
+        private static object Key;
+        static string name;
+        static string grades;
+        //Static bool quit = false
+        static Dictionary<string, String> students = new Dictionary<string, string>();
+        static string[] arrayGrades;
+        static int[] intArrayGrades = new int[4];
+        static int lowestValue;
+        static int highestValue;
+        static double average;
+        static int averageCalc;
+        private static object Kevin;
+        private static object Mora;
+        private static Array inArrayGrades;
+
+        static void Main(string[] args)
+        {
+            for (int i = 0; i < 100; i++)
+
+            {
+                // Dictionary<string, string> categories = new Dictionary<string, string>();
+
+                //while (quit == false){
+
+                Console.WriteLine("Enter a student name");
+                name = Console.ReadLine();
+            }
+
+
+                while (name.ToLower() == "quit")
+                {
+                    Console.WriteLine("What are your grades with spaces between");
+                    grades = Console.ReadLine();
+
+                    students.Add(name, grades);
+
+                    Console.WriteLine("What is your name");
+                    name = Console.ReadLine();
+                    students.Add(name, grades);
+                }
+
+                while (name.ToLower() == "quit")
+                {
+
+                    foreach (var key in students.Keys)  //Splits into a string array, then into an int array
+                    {
+                        //Console.WriteLine("Name {0}", key]);
+                        //Console.WriteLine("Grade {0}", students[key]);
+
+                        arrayGrades = students[key].Split(' ');
+
+                        int[] intarrayGrades = Array.ConvertAll(arrayGrades, int.Parse); //converts String Array to int array
+                        Array.Sort(inArrayGrades); //sorts from lowest to highest. using.Sort
+                        lowestValue = intArrayGrades[0];
+                        highestValue = intArrayGrades[intArrayGrades.Length - 1];
+                        average = intArrayGrades.Average();
+                        foreach (var newkey in students.Keys)
+                        {
+                            Console.WriteLine("Name: {0} and GPA {1}, Highest Grades: {2} and Lowest Grade {3}", key, average, students[key], lowestValue, highestValue);
+                            break;
+                        }
+                        Console.ReadLine();
+                    }
+                }
+            }
+}
+    }
+
+                        /*public static void Quit(){
+                        
+                          if (nameandGrades == "quit"){
+                              quit = true;
+                        }
+                      }*/
