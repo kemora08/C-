@@ -1,1 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ToDoItems
+{
+    class Program
+    {
+        private static string Description;
+        private static IEnumerable<object> toDoList;
+        private static object desc;
+
+        public static object Duedate { get; private set; }
+        public static object Priority { get; private set; }
+        public static object due { get; private set; }
+
+        //public static string Description {get; set;}
+        //public static string DueDate {get; set;}
+        //public static string Priority {get; set;}*/
+
+        public class ToDoItems
+        {
+            [required]
+            public int Id { get; set; }
+            [required]
+            public string Description { get; set; }
+            [required]
+            public string DueDate { get; set; }
+            [required]
+            public string Priority { get; set; }
+                public ToDoItems(string Description, string DueDate, string Priority)
+            {
+                this.Id = Id;
+                this.Description = Description;
+                this.DueDate = DueDate;
+                this.Priority = Priority;
+            }
+        }
+       public static void Main(string[] args)
+        {
+            bool quit = false;
+            while(quit == false)
+            {
+                List<ToDoItem> toDoList = new List<ToDoItem>();
+                Console.WriteLine("Please type a Description to the item to add to the To Do List");
+                Description = Console.ReadLine();
+                Console.WriteLine("Please type the Duedate when it is due");
+                string DueDate = Console.ReadLine();
+                Console.WriteLine("What is the Priority? High, Medium, Low?");
+                Priority = Console.ReadLine();
+            }
+            foreach (object obj in toDoList)
+            {
+                Console.WriteLine(obj);
+            }
+            class ToDoItem
+        {
+            public string priority { get; set; }
+
+            public string description { get; set; }
+            public string dueDate { get; set; }
+
+
+            public ToDoItem() { }
+            public ToDoItem(string Priority, string Description, string DueDate)
+            {
+                priority = Priority;
+                description = Description;
+                dueDate = DueDate;
+
+            }
+        }
+
+        internal class descending
+        {
+            internal static string ToUpper()
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
+
+    internal class requiredAttribute : Attribute
+    {
+    }      
