@@ -1,1 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Checkpoint_1_Towers_of_Hanoi
+{
+    class Program
+    {
+        static string userChoice;
+        private static object Key;
+        static string name;
+        static string grades;
+        //Static bool quit = false
+        static Dictionary<string, String> students = new Dictionary<string, string>();
+        static string[] arrayGrades;
+        static int[] intArrayGrades = new int[4];
+        static int lowestValue;
+        static int highestValue;
+        static double average;
+        static int averageCalc;
+        private static object Kevin;
+        private static object Mora;
+        private static Array inArrayGrades;
+        public static void Main(string[] args)
+        {
+            char[] message = { 'A', 'B', 'C'};
+
+            foreach (char i in message)
+            {
+                char startPeg = 'A'; // start tower in output
+                char endPeg = 'C'; // end tower in output
+                char tempPeg = 'B'; // temporary tower in output
+               
+
+                object totaldisks = null;
+                solveTowers(totaldisks, startPeg, endPeg, tempPeg);
+            }
+
+        }
+
+        private static void solveTowers(object totaldisks, char startPeg, char endPeg, char tempPeg)
+        {
+            int n = 0;
+            if (n > 0)
+            {
+                // Dictionary<string, string> categories = new Dictionary<string, string>();
+
+                //while (A,B,C == false){
+
+                while (name.ToLower() == "A,B,C")
+                {
+                    Console.WriteLine("Enter A,B, or C");
+                    name = Console.ReadLine();
+                    solveTowers(n - 1, startPeg, tempPeg, endPeg);
+                    Console.WriteLine("Move disk from " + startPeg + ' ' + endPeg);
+                    Console.WriteLine("A: 4 3 2 1");
+                    Console.WriteLine("B:");
+                    Console.WriteLine("C:");
+                    Console.WriteLine("A: 4 1");
+                    Console.WriteLine("B: 3");
+                    Console.WriteLine("C: 2");
+                    Console.WriteLine("A:");
+                    Console.WriteLine("B:");
+                    Console.WriteLine("C: 4 3 2 1");
+                    solveTowers(n - 1, tempPeg, endPeg, startPeg);
+                }
+                
+            }
+        }
+    }
+}
 
