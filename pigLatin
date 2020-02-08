@@ -1,4 +1,4 @@
-ing System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,36 +6,29 @@ using System.Threading.Tasks;
 
 namespace PigLatin
 {
-    internal class Program
+    class Program
     {
-    
-        public static void Main(string[] args)
+    public static void Main(string[] args)
         {
-          PigLatin("Astazi e ziau mea.");
-    }
+            string str = "Hello world pig latin";
+            Console.WriteLine(MakePigLatin(str));
+        }
 
-    public static void PigLatin(string text)
-    {
-        char[] lista = { 'A', 'E', 'I', 'O', 'U', 'Y', 'a', 'e', 'i', 'o', 'u', 'y' };
-        string[] lista2 = { "Astazi", "e", "ziua", "mea" };
-            foreach (string word in lista2)
+        public static string MakePigLatin(string str)
+        {
+            string[] words = str.Split(' ');
+            str = String.Empty;
+            for (int i = 0; i < words.Length; i++)
             {
-                Console.WriteLine("Enter a newWord");
-                string newWord = Console.ReadLine();
-                if (Array.BinarySearch(lista, word[0]) >= 0)
-                {
-                    newWord = word + "ay";
-                    Console.Write(newWord + " ");
-                }
-                else
-                {
-                    if (word.Length > 1)
-                    {
-                        newWord = word.Substring(1) + word[0] + "ay";
-                        Console.Write(newWord + " ");
-                    }
-                }
+                if (words[i].Length <= 1) continue;
+                string output = new String(words[i].ToCharArray());
+                output = output.Substring(1, output.Length - 1) + output.Substring(0, 1) + "ay ";
+                str += output;
             }
+            return str.Trim();
+        }  
+    }
+}
 
 
 
