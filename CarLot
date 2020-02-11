@@ -1,1 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace CarLot
+{
+    class Program
+    {
+        //public string vehicleInput {get; set; } //user input--
+        bool isCar = true;
+        bool isTruck = false;
+        string isCarString;
+
+        public static string VehicleInput { get; set; }
+        public static string NameInput { get; set; }
+        public static string ListVehiclesInput { get; set; }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Name");
+            NameInput = Console.ReadLine();
+            Console.WriteLine("A list of Vehicles");
+            ListVehiclesInput = Console.ReadLine();
+            Console.WriteLine("Add a vehicle to the lot");
+            string VehiclesInput = Console.ReadLine();
+            Console.WriteLine("print the inventory of the car, including number of vehicles and details about each vehicle");
+            VehiclesInput = Console.ReadLine();
+
+        }
+
+        class Carlot
+        {
+            private readonly List<string> licensenumber, make, model, price;
+
+            public string type { get; set; }
+            public string number { get; set; }
+            public string vehicleString { get; set; }
+           
+            public List<string> vehicle // public list instat.
+            {
+                get
+                {
+                    List<string> licensenumber = null;
+                    return licensenumber;
+                    List<string> make = null;
+
+                    return make;
+                    List<string> model = null;
+                    return model;
+                    List<string> price = null;
+                    return price;
+
+
+
+                }
+            }
+
+        }
+
+        abstract class Vehicle
+        {
+            public string vehicle { get; set; }
+            public VehicleInput; //user input to enter their vehicle into vehicle abstract class.
+            public string licensenumber { get; set; }
+            public VehicleInput; // user input to enter their license number into vehicle abstract class.
+            public string make { get; set; }
+            public VehicleInput; //user input to enter the make into the vehicle abstract class.
+
+            public string model { get; set; }
+            public VehicleInput; //user input to enter the make into the vehicle abstract class.
+            public string price { get; set; }
+            public VehicleInput; //user input to enter the make into the vehicle abstract class.
+        }
+
+        class Car : Vehicle
+        {
+            public string car { get; set; }
+            public string hatchback { get; set; }
+            public object coupe { get; set; }
+            public object sedan { get; set; }
+            public int doors { get; set; }
+            public string type { get; set; }
+            public object door { get; }
+            public object types { get; private set; }
+
+            public Car(string Car, string doors, string type)
+            {
+                car = car;
+                door = door;
+                types = types;
+            }
+
+
+        }
+        class Truck : Vehicle
+        {
+          public string truck { get; set; }
+            public object bedsize { get; private set; }
+
+            public Truck(string bedsize)
+            {
+                bedsize = bedsize;
+            }
+        }
+
+        }
+
+        internal class VehicleInput
+    {
+
+    }
+}
 
