@@ -1,1 +1,122 @@
+using System;
 
+namespace SuperHeroes
+{
+    internal class Program
+    {
+        private readonly int SuperPower;
+        private readonly int Nemesis;
+        private readonly string NickName;
+
+        //Person Class
+        public class Person
+        {
+            private readonly int RealName;
+            private readonly int SuperPower;
+            private readonly int Nemesis;
+
+            public string Name { get; set; }
+            public string NickName { get; set; }
+
+            //Person Constructor
+            public Person(string inititalName, string initialNickName)
+            {
+                Name = inititalName;
+                NickName = initialNickName;
+            }
+
+            public Person()
+            {
+            }
+
+            public override string ToString()
+            {
+                return "Person:" + Name + " " + NickName;
+            }
+
+            public virtual void PrintGreeting()
+            {
+                Console.WriteLine("Hi, my name is {0} you can call me {1}", Name, NickName);
+                Console.WriteLine("I am {0}. When I am {1}, my super power is Super Strength!", RealName, SuperPower);
+                Console.WriteLine("I am the {0}! Have you seen {1}?", Nemesis, NickName);
+            }
+        }
+
+        //SuperHero Class
+        public class SuperHero : Person
+        {
+            public string RealName { get; set; }
+            public string SuperPower { get; set; }
+
+            //SuperHeroes Constructor
+            public SuperHero(string initialRealName, string initialSuperPower)
+            {
+                RealName = initialRealName;
+                SuperPower = initialSuperPower;
+            }
+            public override string ToString()
+            {
+                return "SuperHero:" + RealName + "" + SuperPower;
+            }
+        }
+
+        //Villain Class
+        public class Villain : Person
+        {
+            public string Nemesis { get; set; }
+            public new string NickName { get; set; }
+
+            //Villain Constructor
+            public Villain(string name, string initialNemesis, string NickName) : (NickName)
+            {
+                Nemesis = initialNemesis;
+                NickName = null;
+            }
+
+            public Villain(string nickName)
+            {
+                NickName = nickName;
+            }
+        }
+
+        public override string ToString()
+        {
+            return "Villain:" + Nemesis + "" + NickName;
+        }
+    }
+
+    public static void Main(string[] args)
+    {
+        Villain GreenGoblin = new Villain("Harry Osborne", "SpiderMan", null);
+
+        List<Person> people = new List<Person>();
+        Console.WriteLine("Hi, my name is William, you can call me Bill.");
+        string William = Console.ReadLine();
+        Console.WriteLine("I am Wade Turner. When I am Mr. Increible, my super power is Super Strength!");
+        string MrIncredible = Console.ReadLine();
+        Console.WriteLine("I am the Joker! Have you seen Batman?");
+        string TheJoker = Console.ReadLine();
+    }
+
+
+    internal class List<T>
+    {
+    }
+
+    internal class Person
+    {
+    }
+
+
+    internal class Villain
+    {
+        public Villain(string v1, string v2, object p)
+        {
+        }
+
+        private static void List<T>()
+    {
+        throw new NotImplementedException();
+    }
+    }
+}
