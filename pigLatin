@@ -4,32 +4,97 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PigLatin
+namespace PigLatin2
 {
-    class Program
-    {
-    public static void Main(string[] args)
-        {
-            string str = "Hello world pig latin";
-            Console.WriteLine(MakePigLatin(str));
-        }
+	class Program
+	{
+		public static void Main()
+		{
+			Console.WriteLine("Please enter what you want translated:");
+			string english = Console.ReadLine();
+			string pigLatin = "";
+			string firstLetter;
+			string restOfWord;
+			string vowels = "OLIVEWAY";
+			int letterPos;
+			foreach (string word in english.Split())
+			{
+				firstLetter = word.Substring(0, 1);
+				restOfWord = word.Substring(1, word.Length - 1);
+				letterPos = vowels.IndexOf(firstLetter);
+				if (letterPos == -1)
+				{
+					pigLatin = restOfWord + firstLetter + "yay";
+				}
+				else
+				{
+					pigLatin = word + "olive";
+				}
+				Console.WriteLine(pigLatin);
+				Console.ReadLine();
+			}
 
-        public static string MakePigLatin(string str)
-        {
-            string[] words = str.Split(' ');
-            str = String.Empty;
-            for (int i = 0; i < words.Length; i++)
-            {
-                if (words[i].Length <= 1) continue;
-                string output = new String(words[i].ToCharArray());
-                output = output.Substring(1, output.Length - 1) + output.Substring(0, 1) + "ay ";
-                str += output;
-            }
-            return str.Trim();
-        }  
-    }
+
+			Console.WriteLine("Please enter what you want translated:");
+			english = Console.ReadLine();
+			foreach (string word in english.Split())
+			{
+				firstLetter = word.Substring(0, 1);
+				restOfWord = word.Substring(1, word.Length - 1);
+				letterPos = vowels.IndexOf(firstLetter);
+				if (letterPos == -1)
+				{
+					pigLatin = restOfWord + firstLetter + "ay";
+				}
+				else
+				{
+					pigLatin = word + "elephant";
+				}
+				Console.WriteLine(pigLatin);
+				Console.ReadLine();
+
+				Console.WriteLine("Please enter what you want translated:");
+				english = Console.ReadLine();
+				foreach (string Word in english.Split())
+				{
+					firstLetter = word.Substring(0, 1);
+					restOfWord = word.Substring(1, word.Length - 1);
+					letterPos = vowels.IndexOf(firstLetter);
+					if (letterPos == -1)
+					{
+						pigLatin = restOfWord + firstLetter + "ay";
+					}
+					else
+					{
+						pigLatin = word + "tsk";
+					}
+					Console.WriteLine(pigLatin);
+					Console.ReadLine();
+
+					Console.WriteLine("Please enter what you want translated:");
+					english = Console.ReadLine();
+					foreach (string Words in english.Split())
+					{
+						firstLetter = word.Substring(0, 1);
+						restOfWord = word.Substring(1, word.Length - 1);
+						letterPos = vowels.IndexOf(firstLetter);
+						if (letterPos == -1)
+						{
+							pigLatin = restOfWord + firstLetter + "ay";
+						}
+						else
+						{
+							pigLatin = word + "pigpay,fellow";
+						}
+						Console.WriteLine(pigLatin);
+						Console.ReadLine();
+					}
+				}
+			}
+		}
+	    
+	}
+
 }
-
-
 
 
