@@ -15,7 +15,7 @@ namespace PigLatin2
 			string pigLatin = "";
 			string firstLetter;
 			string restOfWord;
-			string vowels = "OLIVEWAY";
+			string vowels = "OLIVEYAY";
 			int letterPos;
 			foreach (string word in english.Split())
 			{
@@ -28,7 +28,7 @@ namespace PigLatin2
 				}
 				else
 				{
-					pigLatin = word + "olive";
+					pigLatin = word + "oliveyay";
 				}
 				Console.WriteLine(pigLatin);
 				Console.ReadLine();
@@ -48,7 +48,7 @@ namespace PigLatin2
 				}
 				else
 				{
-					pigLatin = word + "elephant";
+					pigLatin = word + "elephantay";
 				}
 				Console.WriteLine(pigLatin);
 				Console.ReadLine();
@@ -66,7 +66,7 @@ namespace PigLatin2
 					}
 					else
 					{
-						pigLatin = word + "tsk";
+						pigLatin = word + "tskay";
 					}
 					Console.WriteLine(pigLatin);
 					Console.ReadLine();
@@ -96,5 +96,4 @@ namespace PigLatin2
 	}
 
 }
-
-
+	
