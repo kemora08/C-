@@ -65,7 +65,7 @@ namespace SuperHeroes2
                 SuperPower = initialSuperPower;
             }
 
-            public new void PrintGreeting()
+            public override void PrintGreeting()
             {
                 Console.WriteLine(" I am {0}. When I am {1}, my super power is {2}!", RealName, Name, SuperPower);
             }
@@ -83,7 +83,7 @@ namespace SuperHeroes2
                 Nemesis = initialNemesis;
             }
 
-            public new void PrintGreeting()
+            public override void PrintGreeting()
             {
                 Console.WriteLine("I am The {0}! Have you seen {1}?", Name, Nemesis);
             }
