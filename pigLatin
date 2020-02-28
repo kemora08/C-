@@ -14,86 +14,50 @@ namespace PigLatin2
 			string english = Console.ReadLine();
 			string pigLatin = "";
 			string firstLetter;
+			string lastLetter;
 			string restOfWord;
-			string vowels = "OLIVEYAY";
+			char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
 			int letterPos;
-			foreach (string word in english.Split())
+			foreach (string word in english.Split(' '))
 			{
 				firstLetter = word.Substring(0, 1);
 				restOfWord = word.Substring(1, word.Length - 1);
-				letterPos = vowels.IndexOf(firstLetter);
-				if (letterPos == -1)
+				lastLetter = word.Substring(word.Length - 1);
+				letterPos = lastLetter.IndexOfAny(vowels);
+							   
+				 if (firstLetter.IndexOfAny(vowels) == 0)
 				{
-					pigLatin = restOfWord + firstLetter + "yay";
-				}
-				else
-				{
-					pigLatin = word + "oliveyay";
-				}
-				Console.WriteLine(pigLatin);
-				Console.ReadLine();
-			}
-
-
-			Console.WriteLine("Please enter what you want translated:");
-			english = Console.ReadLine();
-			foreach (string word in english.Split())
-			{
-				firstLetter = word.Substring(0, 1);
-				restOfWord = word.Substring(1, word.Length - 1);
-				letterPos = vowels.IndexOf(firstLetter);
-				if (letterPos == -1)
-				{
-					pigLatin = restOfWord + firstLetter + "ay";
-				}
-				else
-				{
-					pigLatin = word + "elephantay";
-				}
-				Console.WriteLine(pigLatin);
-				Console.ReadLine();
-
-				Console.WriteLine("Please enter what you want translated:");
-				english = Console.ReadLine();
-				foreach (string Word in english.Split())
-				{
-					firstLetter = word.Substring(0, 1);
-					restOfWord = word.Substring(1, word.Length - 1);
-					letterPos = vowels.IndexOf(firstLetter);
-					if (letterPos == -1)
+					if (lastLetter.IndexOfAny(vowels) == 0)
 					{
-						pigLatin = restOfWord + firstLetter + "ay";
+						pigLatin = word + "yay";
 					}
 					else
 					{
-						pigLatin = word + "tskay";
-					}
-					Console.WriteLine(pigLatin);
-					Console.ReadLine();
-
-					Console.WriteLine("Please enter what you want translated:");
-					english = Console.ReadLine();
-					foreach (string Words in english.Split())
-					{
-						firstLetter = word.Substring(0, 1);
-						restOfWord = word.Substring(1, word.Length - 1);
-						letterPos = vowels.IndexOf(firstLetter);
-						if (letterPos == -1)
-						{
-							pigLatin = restOfWord + firstLetter + "ay";
-						}
-						else
-						{
-							pigLatin = word + "pigpay,fellow";
-						}
-						Console.WriteLine(pigLatin);
-						Console.ReadLine();
+						pigLatin = word + "ay";
 					}
 				}
+
+				else if (word.IndexOfAny(vowels) == -1)
+				{
+					pigLatin = word + "ay";
+
+				}
+
+				else // add "ay"
+				{
+					pigLatin = restOfWord + firstLetter + "ay";
+				}
+				Console.WriteLine(pigLatin);
+				Console.ReadLine();
 			}
+
+
+		
+		
 		}
 	    
 	}
 
 }
-	
+	   
+
