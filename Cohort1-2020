@@ -1,1 +1,145 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace ManyMethods
+{
+    internal class Program
+    {
+       
+
+        public static void Main(string[] args)
+        {
+            hello();
+            addition();
+            catDog();
+            OddEvent();
+            inches();
+            Echo();
+            killGrams();
+            date();
+            age();
+            guess();
+
+        }
+
+        public static void hello()
+        {
+            Console.WriteLine("Please enter your name");
+            string x = Console.ReadLine();
+            Console.WriteLine("Goodbye" + x);
+            Console.ReadKey();
+        }
+
+        public static void addition()
+        {
+            int value1 = 0;
+            int value2 = 0;
+            int Total;
+            Console.Write("Enter a number");
+            value1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter another number");
+            value2 = Convert.ToInt32(Console.ReadLine());
+            Total = (value1) + (value2);
+            Console.Write("The total of {0} and {1} = {2}", value1, value2, Total);
+
+        }  
+
+        
+
+        public static void catDog()
+        {
+            Console.WriteLine("Do you prefer cats or dogs?");
+            string userInput = Console.ReadLine().ToLower();
+
+            if(userInput == "cats")
+            {
+                Console.Write("Meow");
+            }
+
+            else
+            {
+                Console.Write("Woof!");
+            }
+        }
+
+        public static void OddEvent()
+        {
+           
+            Console.Write("Please enter a odd and even number");
+            int inputuser = Convert.ToInt32(Console.ReadLine());
+
+            if (inputuser % 2 == 0) 
+            {
+                Console.Write("Your number is even");
+            }
+
+            else
+            {
+                Console.Write("Your number is odd");
+            }
+        }
+
+       
+
+        public static void inches()
+        {
+            Console.WriteLine("WHat is your height in feet");
+            double height = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Your height in inches is" + (height * 12));
+            double inch = height * 12;
+            Console.Write("Your are {0}, inches tall", inch);
+
+        }
+
+        public static void Echo()
+        {
+            Console.WriteLine("Please enter a word");
+            string word = Console.ReadLine();
+            string upper = word.ToUpper();
+            string lower = word.ToLower();
+            Console.Write(upper + " " + lower + " " + lower);
+        }
+
+        public static void killGrams()
+        {
+            Console.WriteLine("Enter your weight in pounds");
+            double weight = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("You weigh" + (weight * 0.454) + "in kilograms.");
+            double kilograms = weight / 2.205;
+            Console.Write("Your weigh {0}, in kilograms", kilograms);
+        }
+
+        public static void date()
+        {
+            Console.WriteLine("Today's date and time is" + DateTime.Now);
+        }
+
+        public static void age()
+        {
+            Console.WriteLine("What is your birth year");
+            int birthyear = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("You are " + (2020 - birthyear) + " years old ");
+            
+        }
+
+        public static void guess()
+        {
+            Console.WriteLine("Try and guess the magic word");
+            string GUESS = Console.ReadLine();
+
+            if (GUESS == "Csharp")
+            {
+                Console.WriteLine("You are Correct");
+            }
+            else
+            {
+                Console.WriteLine("You are incorrect");
+            }
+        }
+
+
+
+    }
+      
+}
